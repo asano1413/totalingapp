@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ログイン</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="login-container bg-white shadow-md rounded-lg p-8 max-w-md w-full mx-auto mt-24">
+        <h2 class="text-2xl font-semibold mb-6 text-center">ログイン</h2>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="username" class="block text-left text-gray-700">名前</label>
+                <input type="text" id="username" name="username" required class="w-full p-3 mt-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-left text-gray-700">パスワード</label>
+                <input type="password" id="password" name="password" required class="w-full p-3 mt-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">ログイン</button>
+        </form>
+    </div>
+</body>
+</html>
